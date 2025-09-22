@@ -79,7 +79,7 @@ export default function App() {
       const isCorrect = isGuessed && currentWord.includes(letter)
       const isWrong = isGuessed && !currentWord.includes(letter)
       const className = clsx(
-        'sm:py-3 sm:px-5 px-3 py-1 rounded-xl text-lg sm:text-xl font-bold cursor-pointer',
+        'sm:py-3 sm:px-5 px-4 py-2 rounded-xl text-lg sm:text-xl font-bold cursor-pointer',
         {
           'bg-yellow-300': !isGuessed, // Yellow for unguessed letters
           'bg-green-500 text-white': isCorrect, // Green for correct letters
@@ -133,7 +133,7 @@ export default function App() {
     }
 
     return(
-      <main className='container px-10 flex flex-col items-center'>
+      <main className='flex flex-col items-center justify-center px-2'>
         {
           isGameWon && 
             <ReactConfetti recycle = {false} numberOfPieces={1000} />
@@ -146,7 +146,7 @@ export default function App() {
           <p className='text-md text-gray-400 text-center'>Guess the word in under 8 attemps to keep the <br /> programming world safe from Assembly!</p>
         </header>
         
-        <section className={`flex items-center justify-center h-[150px] ${gameStatusClass}`}>
+        <section className={`flex items-center justify-center w-full h-[120px] sm:h-[150px] ${gameStatusClass}`}>
           {renderGameStatus()}
         </section>
         
@@ -154,11 +154,11 @@ export default function App() {
           {languageElements}
         </section>
         
-        <section className='flex justify-center mt-10 text-white gap-1 '>
+        <section className='flex justify-center sm:mt-10 mt-8 text-white gap-1 '>
           {letterElements}
         </section>
         
-        <section className='flex flex-wrap text-black justify-center gap-2 text-2xl mt-10 max-w-[570px]'>
+        <section className='flex flex-wrap text-black justify-center gap-2 text-2xl sm:mt-10 mt-8 w-full sm:max-w-[570px]'>
           {keyboardElements}
         </section>
         
